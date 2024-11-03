@@ -31,10 +31,10 @@ const BookApp = {
             // Calculate the start and end index for pagination
             const start = (page - 1) * BOOKS_PER_PAGE;
             const end = start + BOOKS_PER_PAGE;
-            const fragment = document.createDocumentFragment();
+            const fragment = document.createDocumentFragment(); // Fragment to batch DOM updates
 
             // Create book preview buttons for each book in the current page slice
-            this.filteredBooks.slice(start, end).forEach(({ author, id, image, title }) => {
+            this.filteredBooks.slice(start, end).forEach(({ author, id, image, title }) => { // Loop through the current page of filtered books
                 const element = document.createElement('button');
                 element.classList = 'preview';
                 element.setAttribute('data-preview', id);
