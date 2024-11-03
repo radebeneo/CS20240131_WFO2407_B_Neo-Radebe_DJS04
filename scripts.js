@@ -35,7 +35,8 @@ const BookApp = {
 
             // Create book preview buttons for each book in the current page slice
             this.filteredBooks.slice(start, end).forEach(({ author, id, image, title }) => { // Loop through the current page of filtered books
-                const element = document.createElement('button');
+                // Create a new <book-preview> element for each book
+                const bookPreview = document.createElement('book-preview');
                 element.classList = 'preview';
                 element.setAttribute('data-preview', id);
                 element.innerHTML = `
