@@ -10,3 +10,8 @@ class BookPreview extends HTMLElement {
     connectedCallback() {
         this.render(); // Render the component's HTML and CSS when added to the page
     }
+
+    // Define the attributes that this component will react to
+    static get observedAttributes() {
+        return ['title', 'author', 'image', 'id'];
+    }
