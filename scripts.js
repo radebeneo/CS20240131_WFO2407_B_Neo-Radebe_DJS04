@@ -37,15 +37,12 @@ const BookApp = {
             this.filteredBooks.slice(start, end).forEach(({ author, id, image, title }) => { // Loop through the current page of filtered books
                 // Create a new <book-preview> element for each book
                 const bookPreview = document.createElement('book-preview');
-                element.classList = 'preview';
-                element.setAttribute('data-preview', id);
-                element.innerHTML = `
-                    <img class="preview__image" src="${image}" />
-                    <div class="preview__info">
-                        <h3 class="preview__title">${title}</h3>
-                        <div class="preview__author">${this.authors[author]}</div>
-                    </div>
-                `;
+                
+                // Set attributes to pass data to the Web Component
+                bookPreview.setAttribute('id', id);
+                bookPreview.setAttribute('title', title);
+                bookPreview.setAttribute('author', this.authors[author]); // Lookup author name
+                bookPreview.setAttribute('image', image);
                 fragment.appendChild(element);
             });
 
