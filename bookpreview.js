@@ -15,3 +15,9 @@ class BookPreview extends HTMLElement {
     static get observedAttributes() {
         return ['title', 'author', 'image', 'id'];
     }
+
+    // Called whenever one of the observed attributes changes
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue) {
+            // Update the corresponding property with the new value
+            this[name] = newValue;
