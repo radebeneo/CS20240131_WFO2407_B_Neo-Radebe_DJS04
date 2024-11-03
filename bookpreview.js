@@ -21,3 +21,7 @@ class BookPreview extends HTMLElement {
         if (oldValue !== newValue) {
             // Update the corresponding property with the new value
             this[name] = newValue;
+            // Re-render the component to reflect the updated attribute
+            this.render();
+        }
+    }
