@@ -48,9 +48,11 @@ const BookApp = {
                 fragment.appendChild(bookpreview);
             });
 
+            // Clear previous list items and append the new fragment to display the current page
             const listItems = document.querySelector('[data-list-items]');
             listItems.innerHTML = '';    // Clear previous items
             listItems.appendChild(fragment);    // Append new items
+        
 
             // Update the "Show More" button state and remaining book count
             const listButton = document.querySelector('[data-list-button]');
