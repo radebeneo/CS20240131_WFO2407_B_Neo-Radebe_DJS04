@@ -83,3 +83,6 @@ class BookPreview extends HTMLElement {
         `;
     }
 }
+
+// Register the new custom element with the browser
+customElements.define('book-preview', BookPreview);
